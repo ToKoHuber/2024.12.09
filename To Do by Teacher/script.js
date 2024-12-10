@@ -105,7 +105,6 @@ function addTaskList(title, color, count, id) {
   const titleDiv = document.createElement("div");
   titleDiv.setAttribute("class", "title");
 
-  todoList.appendChild(titleDiv);
   // <h2>To do</h2>
   const h2 = document.createElement("h2");
   h2.innerText = title;
@@ -123,9 +122,30 @@ function addTaskList(title, color, count, id) {
   titleDiv.appendChild(cirlce);
   titleDiv.appendChild(h2);
   titleDiv.appendChild(para);
+  todoList.appendChild(titleDiv);
   taskContainer2.appendChild(todoList);
 }
 
 containerItems.map((item) => {
   addTaskList(item.title, item.color, item.count, item.id);
+});
+
+//writing...
+
+function addTask(title, date, state) {
+  const ListOption = document.createElement("div");
+  ListOption.setAttribute("class", "ListOption");
+
+  const p = document.createElement("p");
+  p.innerText = title;
+
+  const editButton = document.createElement("div");
+  editButton.setAttribute("class", "editButton");
+
+  const deleteButton = document.createElement("div");
+  deleteButton.setAttribute("class", "deleteButton");
+}
+
+todoData.map((value) => {
+  addTask(value.title);
 });
